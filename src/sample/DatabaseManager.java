@@ -2,14 +2,20 @@ package sample;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class DatabaseManager {
 
-  public static Connection initializeDb(Connection conn) {
+  private static Connection conn;
+  private static String createUserQuery;
+  private static String delQuery;
+  private static PreparedStatement addPrepStmt;
+
+
+  public static Connection initializeDb() {
     final String jdbcDriver = "org.h2.Driver";
     final String db_Url = "jdbc:h2:./res/production";
-
     //  Database credentials
     // to create a database username and password,
     // type Create USER [username] WITH PASSWORD "[password]"
@@ -34,7 +40,29 @@ public class DatabaseManager {
     return conn;
   }
 
-  public static void addProduct(){
+  public static void createUser(String str) {
+    String[] product = {usergit pushName};
+    int index = 1;
+    try {
+
+      //Execute a query
+      createUserQuery = "INSERT INTO USER(USERNAME, FIRSTNAME, LASTNAME,"
+          + " PASSWORD, EMAIL, WINS, LOSSES, RATIO) "
+          + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+
+      addPrepStmt = conn.prepareStatement(createUserQuery);
+      for (String s : product) {
+        System.out.println(s);
+        addPrepStmt.setString(index, s);
+        index++;
+      }
+      addPrepStmt.executeUpdate();
+    } catch (Exception ex) {
+      ex.printStackTrace();
+    }
+  }
+
+  public static void delProduct() {
 
   }
 }
