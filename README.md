@@ -1,7 +1,7 @@
 # Competition Board
 ## Software Fundamentals group project
 This program is software for a gaming competition board.
-As a group project for software fundamentals (Michael Gough, Bernard Georges, Trevor Johnson, and Carlos Martinez) are 
+As a group project for software fundamentals (Michael Gough, Bernard Georges, Trevor Johnson, and Carlos Martinez) are coding 
 this together. 
 
 ## Getting Started
@@ -16,6 +16,7 @@ intellij program to get it running.
 
 * IDE's Used:
     * Intellij
+    * Scenebuilder
 
 ## Author
 
