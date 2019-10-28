@@ -1,5 +1,7 @@
 package sample;
 
+import javafx.fxml.FXML;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -8,20 +10,21 @@ import java.sql.SQLException;
 public class DatabaseManager {
 
   private static Connection conn;
-  private static String createUserQuery;
+  private static String animalQuery;
   private static String delQuery;
   private static PreparedStatement addPrepStmt;
 
 
   public static Connection initializeDb() {
     final String jdbcDriver = "org.h2.Driver";
-    final String db_Url = "jdbc:h2:./res/production";
+    final String db_Url = "jdbc:h2:./res/competitionboard";
     //  Database credentials
     // to create a database username and password,
     // type Create USER [username] WITH PASSWORD "[password]"
     // to allow the user to edit the database use GRANT ALTER ANY SCHEMA TO [username]; in console
     final String user = "admin";
     final String pass = "TestPassword";
+
 
     try {
       // STEP 1: Register JDBC driver
@@ -40,18 +43,19 @@ public class DatabaseManager {
     return conn;
   }
 
-  public static void createUser(String str) {
-    String[] product = {usergit pushName};
+  @FXML
+  public static void checkInAnimal(String str) {
+    String[] animalInformation = {str};
     int index = 1;
     try {
 
       //Execute a query
-      createUserQuery = "INSERT INTO USER(USERNAME, FIRSTNAME, LASTNAME,"
-          + " PASSWORD, EMAIL, WINS, LOSSES, RATIO) "
-          + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+      animalQuery = "INSERT INTO USER(SPECIES, SUBSPECIES, CHECKINDATE,"
+          + " ADOPTIONDATE, CLEANUPDATE, VETCHECKDATE) "
+          + "VALUES (?, ?, ?, ?, ?, ?)";
 
-      addPrepStmt = conn.prepareStatement(createUserQuery);
-      for (String s : product) {
+      addPrepStmt = conn.prepareStatement(animalQuery);
+      for (String s : animalInformation) {
         System.out.println(s);
         addPrepStmt.setString(index, s);
         index++;
@@ -62,7 +66,9 @@ public class DatabaseManager {
     }
   }
 
-  public static void delProduct() {
+  public static void adoptAniaml() {
+
+    //animalQuery =
 
   }
 }
