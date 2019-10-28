@@ -1,5 +1,6 @@
 package sample;
 
+import java.util.Date;
 import javafx.fxml.FXML;
 
 import java.sql.Connection;
@@ -11,7 +12,6 @@ public class DatabaseManager {
 
   private static Connection conn;
   private static String animalQuery;
-  private static String delQuery;
   private static PreparedStatement addPrepStmt;
 
 
@@ -44,15 +44,14 @@ public class DatabaseManager {
   }
 
   @FXML
-  public static void checkInAnimal(String str) {
+  public static void checkInAnimal(String str, String str1, String str2) {
     String[] animalInformation = {str};
     int index = 1;
     try {
 
       //Execute a query
-      animalQuery = "INSERT INTO USER(SPECIES, SUBSPECIES, CHECKINDATE,"
-          + " ADOPTIONDATE, CLEANUPDATE, VETCHECKDATE) "
-          + "VALUES (?, ?, ?, ?, ?, ?)";
+      animalQuery = "INSERT INTO ANIMAL(SPECIES, SUBSPECIES, CHECKINDATE) "
+          + "VALUES (?, ?, ?)";
 
       addPrepStmt = conn.prepareStatement(animalQuery);
       for (String s : animalInformation) {
@@ -66,7 +65,28 @@ public class DatabaseManager {
     }
   }
 
-  public static void adoptAniaml() {
+  public static void adoptAnimal(){
+    Date today = new Date();
+
+    animalQuery = "INSERT INTO ANIMAL(ADOPTIONDATE) VALUES (?)";
+    try {
+      addPrepStmt = conn.prepareStatement(animalQuery);
+      addPrepStmt.setString(1, today.toString());
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+
+
+  }
+
+  public static void animalCleanDate() {
+
+    //animalQuery =
+
+  }
+
+  public static void animalCheckUpDate() {
 
     //animalQuery =
 
