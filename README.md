@@ -1,0 +1,40 @@
+# Competition Board
+## Software Fundamentals group project
+This program is software for a gaming competition board.
+As a group project for software fundamentals (Michael Gough, Bernard Georges, Trevor Johnson, and Carlos Martinez) are coding 
+this together. 
+
+## Getting Started
+
+In order to get this project running, on your local computer for demonstration/testing, 
+you must have Intellij (IDE) installed on your computer. 
+Once you have that installed, you will get the link to this repository and pull it to you
+intellij program to get it running.
+
+
+## Built With
+
+* IDE's Used:
+    * Intellij
+    * Scenebuilder
+
+## Author
+
+Michael Gough,
+Carlos Martinez,
+Bernard Georges,
+Trevor Johnson.
+
+
+## Acknowledgments
+
+Professor Josiah Greenwell
+
+## History
+
+This program was last updated on 10/23/2019
+
+## Key Programming Concepts Utilized
+
+In this program, we have utilized the concepts that we learned in Java. We have used scene builder to help me build my program environment,
+and a css file to create a custom look to the environment. We have connected to the database and inserted values to it.
