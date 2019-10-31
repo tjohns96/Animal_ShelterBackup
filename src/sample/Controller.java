@@ -15,7 +15,7 @@ public class Controller {
   public void initialize() {
 
     DatabaseManager.initializeDb();
-    DatabaseManager.checkInAnimal("Test Animal");
+    DatabaseManager.checkInAnimal(null, null, null, null);
   }
 
 
@@ -24,7 +24,7 @@ public class Controller {
 
     //userInfo.addAll
 
-    DatabaseManager.checkInAnimal("Test Animal");
+    DatabaseManager.checkInAnimal(null, null, null, null);
   }
 
 }

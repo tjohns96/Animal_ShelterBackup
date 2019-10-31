@@ -13,6 +13,8 @@ public class DatabaseManager {
   private static String animalQuery;
   private static String delQuery;
   private static PreparedStatement addPrepStmt;
+  private static int index= 1;
+  private static String[] animalInformation;
 
 
   public static Connection initializeDb() {
@@ -44,15 +46,13 @@ public class DatabaseManager {
   }
 
   @FXML
-  public static void checkInAnimal(String str) {
-    String[] animalInformation = {str};
-    int index = 1;
+  public static void checkInAnimal(String animal, String species, String subSpecies, String checkInDate) {
+    animalInformation = new String[] {animal, species, subSpecies, checkInDate};
     try {
 
       //Execute a query
-      animalQuery = "INSERT INTO USER(SPECIES, SUBSPECIES, CHECKINDATE,"
-          + " ADOPTIONDATE, CLEANUPDATE, VETCHECKDATE) "
-          + "VALUES (?, ?, ?, ?, ?, ?)";
+      animalQuery = "INSERT INTO ANIMAL(NAME, SPECIES, SUBSPECIES, CHECKINDATE)"
+          + "VALUES (?, ?, ?, ?)";
 
       addPrepStmt = conn.prepareStatement(animalQuery);
       for (String s : animalInformation) {
@@ -66,9 +66,23 @@ public class DatabaseManager {
     }
   }
 
-  public static void adoptAniaml() {
+  public static void adoptAnimal(String name, String adoptionDate) {
+    animalInformation = new String[]{name, adoptionDate};
+    try {
 
-    //animalQuery =
+      //Execute a query
+      animalQuery = "UPDATE ANIMAL SET ADOPTIONDATE = ? WHERE NAME = ?";
 
+      addPrepStmt = conn.prepareStatement(animalQuery);
+      for (String s : animalInformation) {
+        System.out.println(s);
+        addPrepStmt.setString(index, s);
+        addPrepStmt.setString(index, s);
+        index++;
+      }
+      addPrepStmt.executeUpdate();
+    } catch (Exception ex) {
+      ex.printStackTrace();
+    }
   }
 }
