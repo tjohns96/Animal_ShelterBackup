@@ -98,7 +98,7 @@
   <?import javafx.scene.text.Font?>
 
 
-<MenuButton alignment="CENTER" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Adoptable Dogs" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<MenuButton alignment="CENTER" contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Adoptable Dogs"  xmlns:fx="http://javafx.com/fxml/1">
 <font>
   <Font size="18.0" />
 </font>
