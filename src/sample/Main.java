@@ -1,13 +1,10 @@
 package sample;
 
-import java.awt.event.ActionEvent;
-import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javax.swing.Action;
 
 public class Main extends Application {
 
@@ -24,3 +21,7 @@ public class Main extends Application {
         launch(args);
     }
 }
+
+
+
+
