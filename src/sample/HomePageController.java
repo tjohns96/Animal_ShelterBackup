@@ -21,34 +21,6 @@ public class HomePageController {
   @FXML
   private ListView<String> listView_Animals = new ListView<>();
 
-  public void loadScene(MenuItem pressedMenuItem, String nameOfFxml, String titleOftheScene) {
-
-    try {
-
-      Stage stage;
-
-      // retrieves and closes current stage
-      stage = (Stage) pressedMenuItem.getScene().getWindow();
-      stage.close();
-
-      // loads main screen stage
-      FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AdoptableDogs.fxml"));
-      Parent profile = (Parent) fxmlLoader.load();
-
-      // creates a new stage
-      Stage newStage = new Stage();
-      newStage.setTitle("Dogs Up For Adoption");
-      newStage.setScene(new Scene(profile));
-
-      // set new stage to current stage and display stage
-      stage = newStage;
-      stage.show();
-
-    } catch (IOException ex) {
-      ex.printStackTrace();
-    }
-
-  }
 
   @FXML
   public void handleAdoptableDogsMenuItem(javafx.event.ActionEvent actionEvent) {
@@ -57,6 +29,11 @@ public class HomePageController {
 
   }
 
+  /**
+   * This method will initialize the ComboBox on the HomePage
+   * with text about the animal shelters mission .. giving a better
+   * user home screen
+   */
 
   public void initialize() {
     listView_Animals.getItems().add("\t" + "EVERY PET DESERVES A FOREVER HOME");
