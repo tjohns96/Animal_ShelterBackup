@@ -12,9 +12,9 @@
   -fx-background-color: #EFEFEF;
 }
 
-.split-pane{
-  -fx-background-image: url(catdog1.jpg);
-}
+/*.split-pane{*/
+/*  -fx-background-image: url(catdog1.jpg);*/
+/*}*/
 
 .list-view{
   -fx-font-family: "Times New Roman";
