@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Dog">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Dog">
   <children>
     <MenuButton alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" text="Adoptable Dogs" AnchorPane.bottomAnchor="450.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <font>
@@ -66,7 +66,7 @@
                           <center>
                             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                               <image>
-                                <Image url="@../../../../Downloads/doggo1.jpg" />
+                                <Image url="@../Images/doggo1.jpg" />
                               </image>
                             </ImageView>
                           </center>
@@ -81,7 +81,7 @@
                           <center>
                             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                               <image>
-                                <Image url="@../../../../Downloads/doggo2.jpg" />
+                                <Image url="@../Images/doggo2.jpg" />
                               </image>
                             </ImageView>
                           </center>
@@ -96,7 +96,7 @@
                           <center>
                             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                               <image>
-                                <Image url="@../../../../Downloads/doggo3.jpg" />
+                                <Image url="@../Images/doggo3.jpg" />
                               </image>
                             </ImageView>
                           </center>
@@ -111,7 +111,7 @@
                           <center>
                             <ImageView fitHeight="124.0" fitWidth="136.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                               <image>
-                                <Image url="@../../../../Downloads/doggo4.jpg" />
+                                <Image url="@../Images/doggo5.jpg" />
                               </image>
                             </ImageView>
                           </center>
@@ -126,7 +126,7 @@
                           <center>
                             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                               <image>
-                                <Image url="@../../../../Downloads/doggo5.jpg" />
+                                <Image url="@../Images/doggo4.jpg" />
                               </image>
                             </ImageView>
                           </center>
@@ -141,7 +141,7 @@
                           <center>
                             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                               <image>
-                                <Image url="@../../../../Downloads/doggo6.jpg" />
+                                <Image url="@../Images/doggo6.jpg" />
                               </image>
                             </ImageView>
                           </center>
