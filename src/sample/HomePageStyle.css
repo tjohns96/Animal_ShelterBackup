@@ -1,0 +1,27 @@
+.root{
+  -fx-background-color: #6B717E;
+}
+
+.label{
+  -fx-text-fill: #0B2027;
+  -fx-font-size: 12pt;
+  -fx-font-family: "Times New Roman";
+}
+
+.menu-bar{
+  -fx-background-color: #EFEFEF;
+}
+
+.split-pane{
+  -fx-background-image: url(catdog1.jpg);
+}
+
+.list-view{
+  -fx-font-family: "Times New Roman";
+  -fx-font-size: 10pt;
+  -fx-text-fill: #0B2027;
+  -fx-text-alignment: center;
+}
+
+
+
