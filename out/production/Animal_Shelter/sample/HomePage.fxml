@@ -10,51 +10,63 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="sample.HomePageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+  prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1"
+  fx:controller="sample.HomePageController">
   <children>
-    <MenuBar layoutX="-13.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <MenuBar layoutX="-13.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+      AnchorPane.topAnchor="0.0">
       <menus>
-        <Menu mnemonicParsing="false" text="Home" />
-        <Menu mnemonicParsing="false" text="Adoptable">
+        <Menu mnemonicParsing="false" text="Home"/>
+        <Menu fx:id="menu_HomePage" mnemonicParsing="false" text="Adoptable">
           <items>
-            <MenuItem fx:id="menuItem_AdoptableDogs" mnemonicParsing="false" onAction="#handleAdoptableDogsMenuItem" text="Adoptable Dogs" />
-            <MenuItem mnemonicParsing="false" text="Adoptable Cats" />
+            <MenuItem fx:id="menuItem_AdoptableDogs" mnemonicParsing="false"
+              onAction="#handleAdoptableDogsMenuItem" text="Adoptable Dogs"/>
+            <MenuItem fx:id="menuItem_AdoptableCats" mnemonicParsing="false" text="Adoptable Cats"/>
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Animal Information ">
           <items>
-            <MenuItem mnemonicParsing="false" text="Edit Animal Info" />
-            <MenuItem mnemonicParsing="false" text="Search Animal" />
-            <MenuItem mnemonicParsing="false" text="Animal Status" />
+            <MenuItem fx:id="menuItem_EditAnimal" mnemonicParsing="false" text="Edit Animal Info"/>
+            <MenuItem fx:id="menuItem_SearchAnimal" mnemonicParsing="false" text="Search Animal"/>
+            <MenuItem fx:id="menuItem_AnimalStatus" mnemonicParsing="false" text="Animal Status"/>
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Animal Care">
           <items>
-            <MenuItem mnemonicParsing="false" text="Groomers" />
-            <MenuItem mnemonicParsing="false" text="Vet visit" />
+            <MenuItem fx:id="menuItem_Groomers" mnemonicParsing="false" text="Groomers"/>
+            <MenuItem fx:id="menuItem_VetVisit" mnemonicParsing="false" text="Vet visit"/>
           </items>
         </Menu>
       </menus>
     </MenuBar>
-    <SplitPane dividerPositions="0.3611859838274933" layoutX="116.0" layoutY="51.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="27.0">
+    <SplitPane dividerPositions="0.3611859838274933" layoutX="116.0" layoutY="51.0"
+      orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0"
+      AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="27.0">
       <items>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="152.0" prefWidth="598.0">
           <children>
-                  <ImageView fitHeight="147.0" fitWidth="686.0" layoutX="-39.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-0.7426605224609375" AnchorPane.leftAnchor="-39.0" AnchorPane.rightAnchor="-49.0" AnchorPane.topAnchor="-6.0">
-                     <image>
-                        <Image url="@../Images/Adopt_Banner.jpg" />
-                     </image>
-                  </ImageView>
+            <ImageView fitHeight="147.0" fitWidth="686.0" layoutX="-39.0" layoutY="-6.0"
+              pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-0.7426605224609375"
+              AnchorPane.leftAnchor="-39.0" AnchorPane.rightAnchor="-49.0"
+              AnchorPane.topAnchor="-6.0">
+              <image>
+                <Image url="@../Images/Adopt_Banner.jpg"/>
+              </image>
+            </ImageView>
           </children>
         </AnchorPane>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-               <children>
-            <ListView fx:id="listView_Animals" prefHeight="130.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-               </children></AnchorPane>
+          <children>
+            <ListView fx:id="listView_Animals" prefHeight="130.0" prefWidth="598.0"
+              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="0.0"/>
+          </children>
+        </AnchorPane>
       </items>
     </SplitPane>
   </children>
   <stylesheets>
-    <URL value="@HomePageStyle.css" />
+    <URL value="@HomePageStyle.css"/>
   </stylesheets>
 </AnchorPane>

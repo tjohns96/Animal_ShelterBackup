@@ -10,18 +10,21 @@
 
 .menu-bar{
   -fx-background-color: #EFEFEF;
+  -fx-border-color: #16303F;
 }
 
-/*.split-pane{*/
-/*  -fx-background-image: url(catdog1.jpg);*/
-/*}*/
+.split-pane{
+  -fx-border-color: #16303F;
+}
 
 .list-view{
   -fx-font-family: "Times New Roman";
   -fx-font-size: 10pt;
   -fx-text-fill: #0B2027;
   -fx-text-alignment: center;
+  -fx-fill: #16303F;
 }
 
+.
 
 
