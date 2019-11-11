@@ -32,6 +32,7 @@ public class DogController {
     rootPane.getChildren().setAll(pane);
   }
 
+
   @FXML
   public void handleGroomersMenuItem(ActionEvent actionEvent) throws IOException {
     AnchorPane pane = FXMLLoader.load(getClass().getResource("Groomers.fxml"));
