@@ -1,6 +1,7 @@
 package sample;
 
 import java.sql.Date;
+import java.sql.ResultSet;
 import javafx.fxml.FXML;
 
 import java.sql.Connection;
@@ -11,15 +12,17 @@ import java.sql.SQLException;
 public class DatabaseManager {
 
   private Connection conn;
+  private PreparedStatement preparedStatement;
+  private ResultSet result;
   private String animalQuery;
   private String delQuery;
-  private PreparedStatement preparedStatement;
   private int index = 1;
   private String[] animalInformationStr;
   private Date[] animalInformationDate;
 
 
-  public Connection initializeDb() {
+
+  public void initializeDb() {
     try {
       final String jdbcDriver = "org.h2.Driver";
       Class.forName(jdbcDriver);
@@ -43,7 +46,18 @@ public class DatabaseManager {
       e.printStackTrace();
     }
 
-    return conn;
+    //return conn;
+  }
+
+  public void closeDB(){
+    try {
+      result.close();
+      preparedStatement.close();
+      conn.close();
+    }
+    catch (SQLException exception){
+      exception.printStackTrace();
+    }
   }
 
   public void checkInAnimal(String name, String species, String subSpecies) {
@@ -61,7 +75,8 @@ public class DatabaseManager {
         index++;
       }
       preparedStatement.executeUpdate();
-    } catch (Exception ex) {
+      preparedStatement.close();
+    } catch (SQLException ex) {
       ex.printStackTrace();
     }
   }
@@ -92,7 +107,7 @@ public class DatabaseManager {
       preparedStatement.setString(7, name);
 
       preparedStatement.executeUpdate();
-    } catch (Exception ex) {
+    } catch (SQLException ex) {
 
       ex.printStackTrace();
     }
@@ -115,7 +130,7 @@ public class DatabaseManager {
         index++;
       }
       preparedStatement.executeUpdate();
-    } catch (Exception ex) {
+    } catch (SQLException ex) {
       ex.printStackTrace();
     }
   }

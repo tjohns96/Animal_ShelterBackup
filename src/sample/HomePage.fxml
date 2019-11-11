@@ -10,7 +10,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="sample.HomePageController">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.HomePageController">
   <children>
     <MenuBar layoutX="-13.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <menus>
@@ -23,7 +23,7 @@
         </Menu>
         <Menu mnemonicParsing="false" text="Animal Information ">
           <items>
-            <MenuItem fx:id="menuItem_EditAnimal" mnemonicParsing="false" text="Edit Animal Info" />
+            <MenuItem fx:id="menuItem_EditAnimal" mnemonicParsing="false" onAction="#handleAnimalInfoMenuItem" text="Edit Animal Info" />
             <MenuItem fx:id="menuItem_SearchAnimal" mnemonicParsing="false" text="Search Animal" />
             <MenuItem fx:id="menuItem_AnimalStatus" mnemonicParsing="false" text="Animal Status" />
           </items>
