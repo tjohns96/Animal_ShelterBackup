@@ -46,6 +46,12 @@ public class HomePageController {
     rootPane.getChildren().setAll(pane);
   }
 
+  @FXML
+  public void handleAnimalInfoMenuItem(ActionEvent actionEvent) throws IOException {
+    AnchorPane pane = FXMLLoader.load(getClass().getResource("AnimalInformation.fxml"));
+    rootPane.getChildren().setAll(pane);
+  }
+
   /**
    * This method will initialize the ComboBox on the HomePage
    * with text about the animal shelters mission .. giving a better
