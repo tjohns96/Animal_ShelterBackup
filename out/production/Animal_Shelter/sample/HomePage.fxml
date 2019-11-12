@@ -28,11 +28,7 @@
             <MenuItem fx:id="menuItem_AnimalStatus" mnemonicParsing="false" text="Animal Status" />
           </items>
         </Menu>
-        <Menu mnemonicParsing="false" text="Animal Care">
-          <items>
-            <MenuItem fx:id="menuItem_Groomers" mnemonicParsing="false" onAction="#handleGroomersMenuItem" text="Groomers" />
-            <MenuItem fx:id="menuItem_VetVisit" mnemonicParsing="false" text="Vet visit" />
-          </items>
+        <Menu mnemonicParsing="false" onAction="#handleAnimalCareMenuItem" text="Animal Care">
         </Menu>
       </menus>
     </MenuBar>
