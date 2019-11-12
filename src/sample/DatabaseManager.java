@@ -2,7 +2,6 @@ package sample;
 
 import java.sql.Date;
 import java.sql.ResultSet;
-import javafx.fxml.FXML;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -65,7 +64,7 @@ public class DatabaseManager {
     try {
 
       //Execute a query
-      animalQuery = "INSERT INTO ANIMAL(NAME, SPECIES, SUBSPECIES)"
+      animalQuery = "INSERT INTO ANIMAL(NAME, SUBSPECIES, BREED)"
           + "VALUES (?, ?, ?)";
 
       preparedStatement = conn.prepareStatement(animalQuery);
@@ -91,7 +90,7 @@ public class DatabaseManager {
     try {
       //Execute a query
       animalQuery =
-          "UPDATE ANIMAL SET SPECIES = ?, SUBSPECIES = ?, CHECKINDATE = ?, ADOPTIONDATE = ?,"
+          "UPDATE ANIMAL SET SUBSPECIES = ?, BREED = ?, CHECKINDATE = ?, ADOPTIONDATE = ?,"
               + " CLEANUPDATE = ?, VETCHECKDATE = ? where NAME = ?";
       preparedStatement = conn.prepareStatement(animalQuery);
       for (String s : animalInformationStr) {
