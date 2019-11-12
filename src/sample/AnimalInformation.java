@@ -83,7 +83,7 @@ public class AnimalInformation {
 
   @FXML
   public void handleGroomersMenuItem(ActionEvent actionEvent) throws IOException {
-    AnchorPane pane = FXMLLoader.load(getClass().getResource("Groomers.fxml"));
+    AnchorPane pane = FXMLLoader.load(getClass().getResource("AnimalCare.fxml"));
     rootPane.getChildren().setAll(pane);
   }
 

@@ -5,7 +5,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
-import sun.plugin.javascript.navig.Anchor;
 
 public class DogController {
 
@@ -34,7 +33,7 @@ public class DogController {
 
   @FXML
   public void handleGroomersMenuItem(ActionEvent actionEvent) throws IOException {
-    AnchorPane pane = FXMLLoader.load(getClass().getResource("Groomers.fxml"));
+    AnchorPane pane = FXMLLoader.load(getClass().getResource("AnimalCare.fxml"));
     rootPane.getChildren().setAll(pane);
   }
 
