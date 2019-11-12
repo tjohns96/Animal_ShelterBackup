@@ -1,6 +1,7 @@
 package sample;
 
-import java.util.Date;
+import java.sql.Date;
+import java.sql.ResultSet;
 import javafx.fxml.FXML;
 
 import java.sql.Connection;
@@ -10,25 +11,30 @@ import java.sql.SQLException;
 
 public class DatabaseManager {
 
-  private static Connection conn;
-  private static String animalQuery;
-  private static PreparedStatement addPrepStmt;
+  private Connection conn;
+  private PreparedStatement preparedStatement;
+  private ResultSet result;
+  private String animalQuery;
+  private String delQuery;
+  private int index = 1;
+  private String[] animalInformationStr;
+  private Date[] animalInformationDate;
 
 
-  public static Connection initializeDb() {
-    final String jdbcDriver = "org.h2.Driver";
-    final String db_Url = "jdbc:h2:./res/competitionboard";
-    //  Database credentials
-    // to create a database username and password,
-    // type Create USER [username] WITH PASSWORD "[password]"
-    // to allow the user to edit the database use GRANT ALTER ANY SCHEMA TO [username]; in console
-    final String user = "admin";
-    final String pass = "TestPassword";
 
-
+  public void initializeDb() {
     try {
-      // STEP 1: Register JDBC driver
+      final String jdbcDriver = "org.h2.Driver";
       Class.forName(jdbcDriver);
+      final String db_Url = "jdbc:h2:./res/AnimalInformation";
+      //  Database credentials
+      // to create a database username and password,
+      // type Create USER [username] WITH PASSWORD "[password]"
+      // to allow the user to edit the database use GRANT ALTER ANY SCHEMA TO [username]; in console
+      final String user = "";
+      final String pass = "";
+
+      // STEP 1: Register JDBC driver
 
       //STEP 2: Open a connection
       conn = DriverManager.getConnection(db_Url, user, pass);
@@ -40,55 +46,92 @@ public class DatabaseManager {
       e.printStackTrace();
     }
 
-    return conn;
+    //return conn;
   }
 
-  @FXML
-  public static void checkInAnimal(String str, String str1, String str2) {
-    String[] animalInformation = {str};
-    int index = 1;
+  public void closeDB(){
+    try {
+      result.close();
+      preparedStatement.close();
+      conn.close();
+    }
+    catch (SQLException exception){
+      exception.printStackTrace();
+    }
+  }
+
+  public void checkInAnimal(String name, String species, String subSpecies) {
+    animalInformationStr = new String[]{name, species, subSpecies};
     try {
 
       //Execute a query
-      animalQuery = "INSERT INTO ANIMAL(SPECIES, SUBSPECIES, CHECKINDATE) "
+      animalQuery = "INSERT INTO ANIMAL(NAME, SPECIES, SUBSPECIES)"
           + "VALUES (?, ?, ?)";
 
-      addPrepStmt = conn.prepareStatement(animalQuery);
-      for (String s : animalInformation) {
+      preparedStatement = conn.prepareStatement(animalQuery);
+      for (String s : animalInformationStr) {
         System.out.println(s);
-        addPrepStmt.setString(index, s);
+        preparedStatement.setString(index, s);
         index++;
       }
-      addPrepStmt.executeUpdate();
-    } catch (Exception ex) {
+      preparedStatement.executeUpdate();
+      preparedStatement.close();
+    } catch (SQLException ex) {
       ex.printStackTrace();
     }
   }
 
-  public static void adoptAnimal(){
-    Date today = new Date();
+  //should be working
+  public void updateAnimalInDB(String name, String species, String subSpecies, Date checkInDate,
+      Date adoptionDate, Date cleanUpDate, Date vetCheckDate) {
+    animalInformationStr = new String[]{species, subSpecies};
 
-    animalQuery = "INSERT INTO ANIMAL(ADOPTIONDATE) VALUES (?)";
+    animalInformationDate = new Date[]{checkInDate, adoptionDate, cleanUpDate, vetCheckDate};
+
     try {
-      addPrepStmt = conn.prepareStatement(animalQuery);
-      addPrepStmt.setString(1, today.toString());
+      //Execute a query
+      animalQuery =
+          "UPDATE ANIMAL SET SPECIES = ?, SUBSPECIES = ?, CHECKINDATE = ?, ADOPTIONDATE = ?,"
+              + " CLEANUPDATE = ?, VETCHECKDATE = ? where NAME = ?";
+      preparedStatement = conn.prepareStatement(animalQuery);
+      for (String s : animalInformationStr) {
+        preparedStatement.setString(index, s);
+        index++;
+      }
 
-    } catch (Exception e) {
-      e.printStackTrace();
+      for (Date d : animalInformationDate) {
+        preparedStatement.setDate(index, d);
+        index++;
+      }
+
+      preparedStatement.setString(7, name);
+
+      preparedStatement.executeUpdate();
+    } catch (SQLException ex) {
+
+      ex.printStackTrace();
     }
 
 
   }
 
-  public static void animalCleanDate() {
+  public void adoptAnimal(String name, String adoptionDate) {
+    animalInformationStr = new String[]{name, adoptionDate};
+    try {
 
-    //animalQuery =
+      //Execute a query
+      animalQuery = "UPDATE ANIMAL SET ADOPTIONDATE = ? WHERE NAME = ?";
 
-  }
-
-  public static void animalCheckUpDate() {
-
-    //animalQuery =
-
+      preparedStatement = conn.prepareStatement(animalQuery);
+      for (String s : animalInformationStr) {
+        System.out.println(s);
+        preparedStatement.setString(index, s);
+        preparedStatement.setString(index, s);
+        index++;
+      }
+      preparedStatement.executeUpdate();
+    } catch (SQLException ex) {
+      ex.printStackTrace();
+    }
   }
 }

@@ -1,6 +1,6 @@
 # Competition Board
 ## Software Fundamentals group project
-This program is software for a gaming competition board.
+This program is software for an animal shelter.
 As a group project for software fundamentals (Michael Gough, Bernard Georges, Trevor Johnson, and Carlos Martinez) are coding 
 this together. 
 
@@ -32,7 +32,7 @@ Professor Josiah Greenwell
 
 ## History
 
-This program was last updated on 10/23/2019
+This program was last updated on 11/11/2019
 
 ## Key Programming Concepts Utilized
 
