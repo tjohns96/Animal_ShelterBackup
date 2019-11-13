@@ -25,7 +25,6 @@
         <Menu mnemonicParsing="false" text="Adoptable">
           <items>
             <MenuItem fx:id="menuItem_AdoptableDogs" mnemonicParsing="false" onAction="#handleAdoptableDogsMenuItem" text="Adoptable Dogs" />
-            <MenuItem fx:id="menuItem_AdoptableCats" mnemonicParsing="false" onAction="#handleAdoptableCatsMenuItem" text="Adoptable Cats" />
           </items>
         </Menu>
         <Menu mnemonicParsing="false" text="Animal Info">

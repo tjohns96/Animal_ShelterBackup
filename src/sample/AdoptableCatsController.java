@@ -42,4 +42,10 @@ public class AdoptableCatsController {
     rootPane.getChildren().setAll(pane);
   }
 
+  @FXML
+  public void handleAnimalCareMenuItem(ActionEvent actionEvent) throws IOException {
+    AnchorPane pane = FXMLLoader.load(getClass().getResource("AnimalCare.fxml"));
+    rootPane.getChildren().setAll(pane);
+  }
+
 }
