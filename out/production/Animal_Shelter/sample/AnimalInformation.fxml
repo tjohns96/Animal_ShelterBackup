@@ -21,7 +21,7 @@
         <Font size="18.0" />
       </font>
       <items>
-        <MenuItem fx:id="menuItem_HomePage" mnemonicParsing="false" text="Home" />
+        <MenuItem fx:id="menuItem_HomePage" mnemonicParsing="false" text="Home"/>
         <Menu mnemonicParsing="false" text="Adoptable">
           <items>
             <MenuItem fx:id="menuItem_AdoptableDogs" mnemonicParsing="false" text="Adoptable Dogs" />

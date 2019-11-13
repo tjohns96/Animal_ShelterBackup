@@ -16,17 +16,10 @@ public class AdoptableDogsController {
     AnchorPane pane = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
     rootPane.getChildren().setAll(pane);
   }
+
   @FXML
   public void handleAddAnimalMenuItem(ActionEvent actionEvent) throws IOException {
     AnchorPane pane = FXMLLoader.load(getClass().getResource("AddAnimal.fxml"));
-    rootPane.getChildren().setAll(pane);
-  }
-
-  @FXML
-  public void handleAdoptableDogsMenuItem(javafx.event.ActionEvent actionEvent) throws IOException {
-    //This is a test to see if there is functionality to the menuitem
-    System.out.println("You would like to adopt a dog!!");
-    AnchorPane pane = FXMLLoader.load(getClass().getResource("AdoptableDogs.fxml"));
     rootPane.getChildren().setAll(pane);
   }
 
@@ -42,4 +35,9 @@ public class AdoptableDogsController {
     rootPane.getChildren().setAll(pane);
   }
 
+  @FXML
+  public void handleAnimalCareMenuItem(ActionEvent actionEvent) throws IOException {
+    AnchorPane pane = FXMLLoader.load(getClass().getResource("AnimalCare.fxml"));
+    rootPane.getChildren().setAll(pane);
+  }
 }

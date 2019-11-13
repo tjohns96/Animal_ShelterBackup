@@ -24,7 +24,6 @@
         <MenuItem fx:id="menuItem_HomePage" mnemonicParsing="false" onAction="#handleHomeMenuItem" text="Home" />
         <Menu mnemonicParsing="false" text="Adoptable">
           <items>
-            <MenuItem fx:id="menuItem_AdoptableDogs" mnemonicParsing="false" onAction="#handleAdoptableDogsMenuItem" text="Adoptable Dogs" />
             <MenuItem fx:id="menuItem_AdoptableCats" mnemonicParsing="false" onAction="#handleAdoptableCatsMenuItem" text="Adoptable Cats" />
           </items>
         </Menu>

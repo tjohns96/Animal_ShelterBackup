@@ -70,6 +70,11 @@ public class AnimalInformationController {
     return date;
   }
 
+  @FXML
+  public void handleHomeMenuItem(ActionEvent actionEvent) throws IOException {
+    AnchorPane pane = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+    rootPane.getChildren().setAll(pane);
+  }
 
   @FXML
   public void handleAdoptableDogsMenuItem(javafx.event.ActionEvent actionEvent) throws IOException {
