@@ -1,17 +1,11 @@
 package sample;
 
-import java.awt.Button;
-import java.awt.MenuItem;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.ListView;
-import javafx.scene.control.ComboBox;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 
 
 public class HomePageController {
@@ -28,8 +22,6 @@ public class HomePageController {
 
   @FXML
   public void handleAdoptableDogsMenuItem(javafx.event.ActionEvent actionEvent) throws IOException {
-    //This is a test to see if there is functionality to the menuitem
-    System.out.println("You would like to adopt a dog!!");
     AnchorPane pane = FXMLLoader.load(getClass().getResource("AdoptableDogs.fxml"));
     rootPane.getChildren().setAll(pane);
   }
@@ -60,9 +52,8 @@ public class HomePageController {
   }
 
   /**
-   * This method will initialize the ComboBox on the HomePage
-   * with text about the animal shelters mission .. giving a better
-   * user home screen
+   * This method will initialize the ComboBox on the HomePage with text about the animal shelters
+   * mission .. giving a better user home screen
    */
   public void initialize() {
     listView_Animals.getItems().add("\t" + "EVERY PET DESERVES A FOREVER HOME");
