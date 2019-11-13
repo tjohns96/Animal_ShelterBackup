@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 
-public class CatController {
+public class AdoptableCatsController {
 
   @FXML
   private AnchorPane rootPane;
@@ -14,6 +14,11 @@ public class CatController {
   @FXML
   public void handleHomeMenuItem(ActionEvent actionEvent) throws IOException {
     AnchorPane pane = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+    rootPane.getChildren().setAll(pane);
+  }
+  @FXML
+  public void handleAddAnimalMenuItem(ActionEvent actionEvent) throws IOException {
+    AnchorPane pane = FXMLLoader.load(getClass().getResource("AddAnimal.fxml"));
     rootPane.getChildren().setAll(pane);
   }
 

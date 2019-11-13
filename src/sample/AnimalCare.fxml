@@ -34,8 +34,6 @@
             <MenuItem fx:id="menuItem_AnimalStatus" mnemonicParsing="false" text="Animal Status" />
           </items>
         </Menu>
-        <Menu mnemonicParsing="false" onAction="#handleAnimalCareMenuItem" text="Animal Care">
-        </Menu>
       </items>
     </MenuButton>
     <GridPane layoutX="128.0" layoutY="115.0" prefHeight="170.0" prefWidth="345.0">

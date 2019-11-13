@@ -6,8 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 
-public class DogController {
-
+public class AddAnimalController {
   @FXML
   private AnchorPane rootPane;
 
@@ -36,5 +35,7 @@ public class DogController {
     AnchorPane pane = FXMLLoader.load(getClass().getResource("AnimalCare.fxml"));
     rootPane.getChildren().setAll(pane);
   }
+
+
 
 }

@@ -11,7 +11,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.DatePicker;
 import javafx.scene.layout.AnchorPane;
 
-public class AnimalInformation {
+public class AnimalInformationController {
+
+  private Date checkInDate;
+  private Date checkOutDate;
+  private Date groomDate;
+  private Date vetDate;
+  private DatabaseManager db = new DatabaseManager();
+  private java.util.Date date;
+
   @FXML
   private AnchorPane rootPane;
   @FXML
@@ -25,15 +33,10 @@ public class AnimalInformation {
   @FXML
   private DatePicker datePicker_VetVisit;
 
-  Date checkInDate;
-  Date checkOutDate;
-  Date groomDate;
-  Date vetDate;
-  DatabaseManager db = new DatabaseManager();
-  private java.util.Date date;
+
 
   @FXML
-  public void handleUpdateBtn(ActionEvent actionEvent){
+  public void handleUpdateBtn(ActionEvent actionEvent) {
     db.initializeDb();
     String name = textField_Name.getText();
     //String species = textField_Species.getText()
@@ -60,8 +63,9 @@ public class AnimalInformation {
     datePicker_VetVisit.getEditor().clear();
   }
 
-  public java.util.Date convertToDatePicker(DatePicker datePicked){
-    date = java.util.Date.from(datePicked.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
+  public java.util.Date convertToDatePicker(DatePicker datePicked) {
+    date = java.util.Date
+        .from(datePicked.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
 
     return date;
   }
@@ -72,6 +76,18 @@ public class AnimalInformation {
     //This is a test to see if there is functionality to the menuitem
     //System.out.println("You would like to adopt a dog!!");
     AnchorPane pane = FXMLLoader.load(getClass().getResource("AdoptableDogs.fxml"));
+    rootPane.getChildren().setAll(pane);
+  }
+
+  @FXML
+  public void handleAnimalCareMenuItem(ActionEvent actionEvent) throws IOException {
+    AnchorPane pane = FXMLLoader.load(getClass().getResource("AnimalCare.fxml"));
+    rootPane.getChildren().setAll(pane);
+  }
+
+  @FXML
+  public void handleAddAnimalMenuItem(ActionEvent actionEvent) throws IOException {
+    AnchorPane pane = FXMLLoader.load(getClass().getResource("AddAnimal.fxml"));
     rootPane.getChildren().setAll(pane);
   }
 
