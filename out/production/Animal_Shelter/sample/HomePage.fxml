@@ -66,6 +66,6 @@
     </MenuButton>
   </children>
   <stylesheets>
-    <URL value="@HomePageStyle.css"/>
+    <URL value="@Style.css"/>
   </stylesheets>
 </AnchorPane>
