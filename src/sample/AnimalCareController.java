@@ -56,4 +56,14 @@ public class AnimalCareController {
     AnchorPane pane = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
     rootPane.getChildren().setAll(pane);
   }
+  @FXML
+  public void handleAnimalSearchMenuItem(ActionEvent actionEvent) throws IOException {
+    AnchorPane pane = FXMLLoader.load(getClass().getResource("AnimalSearch.fxml"));
+    rootPane.getChildren().setAll(pane);
+  }
+  @FXML
+  public void handleAnimalStatusMenuItem(ActionEvent actionEvent) throws IOException {
+    AnchorPane pane = FXMLLoader.load(getClass().getResource("AnimalStatus.fxml"));
+    rootPane.getChildren().setAll(pane);
+  }
 }
