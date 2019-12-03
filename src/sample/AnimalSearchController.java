@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 
 public class AnimalSearchController {
+
   @FXML
   private AnchorPane rootPane;
 
@@ -17,14 +18,13 @@ public class AnimalSearchController {
   }
 
   @FXML
-  public void handleAdoptableCatsMenuItem(ActionEvent actionEvent) throws IOException {
-    AnchorPane pane = FXMLLoader.load(getClass().getResource("AdoptableCats.fxml"));
+  public void handleHomeMenuItem(ActionEvent actionEvent) throws IOException {
+    AnchorPane pane = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
     rootPane.getChildren().setAll(pane);
   }
-
   @FXML
-  public void handleGroomersMenuItem(ActionEvent actionEvent) throws IOException {
-    AnchorPane pane = FXMLLoader.load(getClass().getResource("Groomers.fxml"));
+  public void handleAdoptableCatsMenuItem(ActionEvent actionEvent) throws IOException {
+    AnchorPane pane = FXMLLoader.load(getClass().getResource("AdoptableCats.fxml"));
     rootPane.getChildren().setAll(pane);
   }
 

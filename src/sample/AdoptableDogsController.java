@@ -8,8 +8,7 @@ import javafx.scene.layout.AnchorPane;
 
 public class AdoptableDogsController {
 
-  @FXML
-  private AnchorPane rootPane;
+  @FXML private AnchorPane rootPane;
 
   @FXML
   public void handleHomeMenuItem(ActionEvent actionEvent) throws IOException {
@@ -40,14 +39,22 @@ public class AdoptableDogsController {
     AnchorPane pane = FXMLLoader.load(getClass().getResource("AnimalCare.fxml"));
     rootPane.getChildren().setAll(pane);
   }
+
   @FXML
   public void handleAnimalSearchMenuItem(ActionEvent actionEvent) throws IOException {
     AnchorPane pane = FXMLLoader.load(getClass().getResource("AnimalSearch.fxml"));
     rootPane.getChildren().setAll(pane);
   }
+
   @FXML
   public void handleAnimalStatusMenuItem(ActionEvent actionEvent) throws IOException {
     AnchorPane pane = FXMLLoader.load(getClass().getResource("AnimalStatus.fxml"));
+    rootPane.getChildren().setAll(pane);
+  }
+
+  @FXML
+  public void handleAnimalInfoMenuItem(ActionEvent actionEvent) throws IOException {
+    AnchorPane pane = FXMLLoader.load(getClass().getResource("AnimalInformation.fxml"));
     rootPane.getChildren().setAll(pane);
   }
 }
